@@ -70,5 +70,32 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button botaoDialog= (Button) findViewById(R.id.botao_dialog);
+        botaoDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, DialogActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button botaoListView = (Button) findViewById(R.id.botao_listview);
+        botaoListView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ListViewActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button botaoListViewCustomizada = (Button) findViewById(R.id.botao_listview_customizada);
+        botaoListViewCustomizada.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ListViewCustomizadaActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

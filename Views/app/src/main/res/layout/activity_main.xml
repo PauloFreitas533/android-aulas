@@ -10,11 +10,6 @@
     tools:context="br.com.wolneyhqf.android.aulas.views.MainActivity"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
-
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -50,4 +45,23 @@
         android:layout_height="wrap_content"
         android:id="@+id/botao_spinner"
         android:text="Spinner"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/botao_dialog"
+        android:text="Dialog"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/botao_listview"
+        android:text="ListView"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/botao_listview_customizada"
+        android:text="ListView Customizada"/>
+
 </LinearLayout>

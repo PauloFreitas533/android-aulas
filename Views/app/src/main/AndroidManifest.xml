@@ -20,7 +20,10 @@
         <activity android:name=".ButtonsActivity" />
         <activity android:name=".CheckBoxToggleButtonActivity" />
         <activity android:name=".RadioButtonActivity" />
-        <activity android:name=".SpinnerActivity"></activity>
+        <activity android:name=".SpinnerActivity" />
+        <activity android:name=".DialogActivity" />
+        <activity android:name=".ListViewActivity" />
+        <activity android:name=".ListViewCustomizadaActivity"></activity>
     </application>
 
 </manifest>
