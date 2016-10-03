@@ -18,14 +18,18 @@ public class ListViewActivity extends AppCompatActivity implements ListView.OnIt
         setContentView(R.layout.activity_list_view);
 
         ListView listViewPaises = (ListView) findViewById(R.id.listview_paises);
+
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, paises);
+
         listViewPaises.setAdapter(adapter);
+
         listViewPaises.setOnItemClickListener(this);
     }
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         String pais = (String) adapterView.getAdapter().getItem(i);
+
         Toast.makeText(this, "País selecionado: " + pais, Toast.LENGTH_SHORT).show();
     }
 }

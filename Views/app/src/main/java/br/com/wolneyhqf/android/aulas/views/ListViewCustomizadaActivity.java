@@ -20,9 +20,13 @@ public class ListViewCustomizadaActivity extends AppCompatActivity implements Li
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view_customizada);
+
         ListView listViewPaisesCustomizada = (ListView) findViewById(R.id.list_view_customizada);
+
         PaisAdapter adaptador = new PaisAdapter(this, getListPaises());
+
         listViewPaisesCustomizada.setAdapter(adaptador);
+
         listViewPaisesCustomizada.setOnItemClickListener(this);
     }
 

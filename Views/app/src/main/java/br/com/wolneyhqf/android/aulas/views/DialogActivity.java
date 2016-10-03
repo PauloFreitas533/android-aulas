@@ -27,12 +27,18 @@ public class DialogActivity extends AppCompatActivity {
         buttonProgressDialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 ProgressDialog dialog = new ProgressDialog(DialogActivity.this);
+
                 dialog.setTitle("Exemplo ProgressDialog");
                 dialog.setMessage("Aguarde um momento...");
                 dialog.setIndeterminate(true);
                 dialog.setCancelable(true);
                 dialog.show();
+
+                dialog.dismiss();
+
+
             }
         });
 
@@ -41,10 +47,12 @@ public class DialogActivity extends AppCompatActivity {
         buttonAlertDialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 AlertDialog.Builder builder = new AlertDialog.Builder(DialogActivity.this);
                 builder.setIcon(R.drawable.smile1);
                 builder.setTitle("Exemplo AlertDialog");
                 builder.setMessage("Você confirma a ação?");
+
                 builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -52,6 +60,7 @@ public class DialogActivity extends AppCompatActivity {
                         return;
                     }
                 });
+
                 builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -61,6 +70,8 @@ public class DialogActivity extends AppCompatActivity {
                 });
                 AlertDialog dialog = builder.create();
                 dialog.show();
+
+
             }
         });
 
@@ -68,17 +79,16 @@ public class DialogActivity extends AppCompatActivity {
         buttonProgressBar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
                         for(i=0;i<=100; i++){
-                            final int progresso = 3;
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
                                     Log.d("AppViews", "Progresso: " + i);
                                     progressBar.setProgress(i);
-                                    progressBar.refreshDrawableState();
                                 }
                             });
                             try {
@@ -90,6 +100,7 @@ public class DialogActivity extends AppCompatActivity {
                         Log.d("AppViews", "Fim da Simulação");
                     }
                 }).start();
+
             }
         });
     }
