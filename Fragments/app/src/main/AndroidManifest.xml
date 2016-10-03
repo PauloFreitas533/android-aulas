@@ -25,7 +25,8 @@
         <activity android:name=".PaisActivity" />
         <activity android:name=".PaisesFragmentActivity" />
         <activity android:name=".PaisFragmentActivity" />
-        <activity android:name=".PaisesDualActivity"></activity>
+        <activity android:name=".PaisesDualActivity" />
+        <activity android:name=".BackStackActivity"></activity>
     </application>
 
 </manifest>

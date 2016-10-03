@@ -40,4 +40,10 @@
         android:id="@+id/button_activity_dual_paises"
         android:text="Activity Dual Países"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_activity_back_stack"
+        android:text="Activity Back Stack"/>
+
 </LinearLayout>

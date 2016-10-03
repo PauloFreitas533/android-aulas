@@ -59,5 +59,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button buttonActivityBackStack = (Button) findViewById(R.id.button_activity_back_stack);
+        buttonActivityBackStack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, BackStackActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
