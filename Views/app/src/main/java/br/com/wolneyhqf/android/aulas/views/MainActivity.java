@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         botaoTextViewEditText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, TextViewEditTextActivity.class);
+                Intent intent = new Intent(MainActivity.this, Q1Activity.class);
                 startActivity(intent);
             }
         });

@@ -36,7 +36,8 @@ public class DialogActivity extends AppCompatActivity {
                 dialog.setCancelable(true);
                 dialog.show();
 
-                dialog.dismiss();
+                // método que fecha o dialog
+                //dialog.dismiss();
 
 
             }

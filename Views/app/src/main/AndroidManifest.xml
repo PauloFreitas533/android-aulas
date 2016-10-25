@@ -15,6 +15,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Q1Activity" android:label="Cadastro de Usuário" />
         <activity android:name=".TextViewEditTextActivity" />
         <activity android:name=".AutoCompletTextViewActivity" />
         <activity android:name=".ButtonsActivity" />
