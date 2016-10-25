@@ -24,7 +24,7 @@ public class ActionBar1Activity extends AppCompatActivity {
 
         // Método que ativida o botão Up Navigation
         actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setTitle("Aula 04 - Titulo modificado");
+        actionBar.setTitle("Aula de ActionBar");
 
     }
 
