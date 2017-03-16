@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="br.com.wolneyhqf.aulas.appcampeonatobrasileiro.activity.BroadcastActivity">
+
+    <Button
+        android:id="@+id/buttonSendBrodcast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send Broadcast"
+        android:onClick="sendBroadcast"/>
+
+    <Button
+        android:id="@+id/buttonSendBrodcastDinamico"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send Broadcast"
+        android:onClick="sendBroadcastDinamico"/>
+
+    <Button
+        android:id="@+id/buttonNotificacaoActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Activity de Notificações"
+        android:onClick="openActicityNotificacao"/>
+
+    <Button
+        android:id="@+id/buttonAlarmActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Activity de Alarme"
+        android:onClick="openActicityAlarm"/>
+
+    <Button
+        android:id="@+id/buttonServiceActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Activity de Service"
+        android:onClick="openActicityService"/>
+
+</LinearLayout>

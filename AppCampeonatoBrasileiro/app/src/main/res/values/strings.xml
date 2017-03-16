@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">App Campeonato BR</string>
+
+
+    <string name="clubes">Clubes</string>
+    <string name="classificacao">Classificação</string>
+    <string name="tabela">Tabela</string>
+    <string name="noticias">Notícias</string>
+    <string name="configuracoes">Configurações</string>
+    <string name="title_activity_teste">TesteActivity</string>
+
+</resources>
