@@ -11,7 +11,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import br.com.wolneyhqf.android.aulas.navegateapp.R;
 import br.com.wolneyhqf.android.aulas.navegateapp.fragment.FragmentA;

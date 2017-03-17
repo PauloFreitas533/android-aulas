@@ -12,24 +12,20 @@ import br.com.wolneyhqf.android.aulas.threads.util.MensagemHandler;
 
 public class HandlerActivity extends AppCompatActivity {
 
-    public Handler handler;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_handler);
 
-        handler = new MensagemHandler(this);
+
 
         Button buttonDispararMensagem = (Button) findViewById(R.id.button_msg);
         buttonDispararMensagem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Handler handler = new MensagemHandler(HandlerActivity.this);
                 Message msg = new Message();
-
                 msg.what = MensagemHandler.MSG_01;
-
                 handler.sendMessageDelayed(msg, 3000);
 
             }
@@ -41,7 +37,7 @@ public class HandlerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                final Handler handler = new Handler();
+                Handler handler = new Handler();
 
                 handler.postDelayed(new Runnable() {
                     @Override
@@ -49,7 +45,6 @@ public class HandlerActivity extends AppCompatActivity {
                         Toast.makeText(HandlerActivity.this, "A Mensagem Chegou! (Executada no Runnable)", Toast.LENGTH_SHORT).show();
                     }
                 }, 3000);
-
 
             }
         });

@@ -40,4 +40,10 @@
         android:layout_height="wrap_content"
         android:text="RecyclerView"
         android:id="@+id/button_activity_recycler_view"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Toolbar"
+        android:id="@+id/button_activity_toolbar"/>
 </LinearLayout>

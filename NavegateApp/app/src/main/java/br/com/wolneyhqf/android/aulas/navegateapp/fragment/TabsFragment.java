@@ -26,7 +26,7 @@ public class TabsFragment extends Fragment {
 
         ViewPager viewPager = (ViewPager) view.findViewById(R.id.view_pager);
         viewPager.setOffscreenPageLimit(2);
-        viewPager.setAdapter(new TabsAdapter(getContext(), getChildFragmentManager()));
+        viewPager.setAdapter(new TabsAdapter(getChildFragmentManager()));
 
         TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tab_layout);
         tabLayout.setupWithViewPager(viewPager);

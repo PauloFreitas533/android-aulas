@@ -69,7 +69,7 @@ public class DownloadImagemActivity extends AppCompatActivity {
     }
 
     public void atualizaImagem(final Bitmap bitmap){
-        handler.post(new Runnable() {
+        runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 progressDialog.dismiss();

@@ -19,7 +19,8 @@
         <activity android:name=".FABActivity" />
         <activity android:name=".CardViewActivity" />
         <activity android:name=".RecyclerViewActivity" />
-        <activity android:name=".RippleActivity"></activity>
+        <activity android:name=".RippleActivity" />
+        <activity android:name=".ToolbarActivity" android:theme="@style/AppThemeNoActionBar" />
     </application>
 
 </manifest>

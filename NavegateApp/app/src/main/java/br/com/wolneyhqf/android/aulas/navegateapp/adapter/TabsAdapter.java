@@ -15,11 +15,8 @@ import br.com.wolneyhqf.android.aulas.navegateapp.fragment.FragmentC;
 
 public class TabsAdapter extends FragmentPagerAdapter {
 
-    private Context context;
-
-    public TabsAdapter(Context context, FragmentManager fragmentManager){
+    public TabsAdapter(FragmentManager fragmentManager){
         super(fragmentManager);
-        this.context = context;
     }
 
     @Override
