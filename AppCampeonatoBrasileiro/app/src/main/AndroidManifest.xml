@@ -22,6 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.BroadcastActivity" />
+        <activity android:name=".activity.PreferencesActivity" android:theme="@style/AppTheme.Material" />
 
         <receiver android:name=".broadcast.AppBrodcastReceiver">
             <intent-filter>
@@ -34,11 +35,10 @@
         <activity android:name=".activity.NotificationsActivity" />
         <activity android:name=".activity.MensagemActivity" />
         <activity android:name=".activity.AlarmActivity" />
-        <activity android:name=".activity.ServiceActivity"></activity>
+        <activity android:name=".activity.ServiceActivity" />
 
         <service android:name=".service.AppService" />
         <service android:name=".service.AppIntentService" />
-
     </application>
 
 </manifest>

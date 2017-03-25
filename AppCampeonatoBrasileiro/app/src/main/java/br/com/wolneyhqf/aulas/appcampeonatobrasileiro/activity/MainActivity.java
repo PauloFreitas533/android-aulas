@@ -33,7 +33,7 @@ public class MainActivity extends BaseActivity {
                 ft.commit();
                 break;
             case R.id.nav_item_configuracoes:
-                Intent intent = new Intent(getBaseContext(), BroadcastActivity.class);
+                Intent intent = new Intent(getBaseContext(), PreferencesActivity.class);
                 startActivity(intent);
                 break;
         }

@@ -1,5 +1,11 @@
 <resources>
 
+    <style name="AppTheme.Material" parent="android:Theme.Material.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
     <style name="AppTheme.NoActionBar.NavDrawer">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

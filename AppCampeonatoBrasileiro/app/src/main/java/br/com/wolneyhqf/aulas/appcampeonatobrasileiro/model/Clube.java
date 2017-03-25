@@ -11,6 +11,7 @@ import java.util.Date;
 
 public class Clube implements Parcelable {
 
+    private long id;
     private String nome;
     private String nomeAbreviado;
     private String mascote;
@@ -104,6 +105,14 @@ public class Clube implements Parcelable {
 
     public String getCidade() {
         return cidade;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public void setCidade(String cidade) {
