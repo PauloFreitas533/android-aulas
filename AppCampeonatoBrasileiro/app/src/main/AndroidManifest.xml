@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="br.com.wolneyhqf.aulas.appcampeonatobrasileiro">
+    package="br.com.wolneyhqf.aulas.appcbr">
 
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -22,7 +25,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.BroadcastActivity" />
-        <activity android:name=".activity.PreferencesActivity" android:theme="@style/AppTheme.Material" />
+        <activity
+            android:name=".activity.PreferencesActivity"
+            android:theme="@style/AppTheme.Material" />
 
         <receiver android:name=".broadcast.AppBrodcastReceiver">
             <intent-filter>
@@ -39,6 +44,19 @@
 
         <service android:name=".service.AppService" />
         <service android:name=".service.AppIntentService" />
+
+        <activity
+            android:name=".activity.FaleConoscoActivity"
+            android:label="Fale Conosco"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.LogActivity"
+            android:label="Logs do Aplicativo"
+            android:theme="@style/AppTheme.NoActionBar" />
+        />
+        <activity android:name=".activity.ProfileActivity"
+            android:label="Perfil"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

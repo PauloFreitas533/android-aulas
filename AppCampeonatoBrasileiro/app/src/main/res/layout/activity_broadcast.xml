@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="br.com.wolneyhqf.aulas.appcampeonatobrasileiro.activity.BroadcastActivity">
+    tools:context="br.com.wolneyhqf.aulas.appcbr.activity.BroadcastActivity">
 
     <Button
         android:id="@+id/buttonSendBrodcast"

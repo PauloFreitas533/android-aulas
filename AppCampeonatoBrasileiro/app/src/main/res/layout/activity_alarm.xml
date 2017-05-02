@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="br.com.wolneyhqf.aulas.appcampeonatobrasileiro.activity.AlarmActivity">
+    tools:context="br.com.wolneyhqf.aulas.appcbr.activity.AlarmActivity">
 
     <Button
         android:id="@+id/buttonAlarme"

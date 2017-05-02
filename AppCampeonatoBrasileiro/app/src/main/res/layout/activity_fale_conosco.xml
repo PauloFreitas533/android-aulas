@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="br.com.wolneyhqf.aulas.appcbr.activity.FaleConoscoActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/textview_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Para sugerir melhorias, reportar bugs e demais sugestões, preencha e envie o formulário abaixo:"/>
+
+        <EditText
+            android:id="@+id/edittext_nome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textview_info"
+            android:layout_marginTop="30dp"
+            android:hint="Nome"/>
+
+        <EditText
+            android:id="@+id/edittext_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edittext_nome"
+            android:hint="E-mail"
+            android:inputType="textEmailAddress"/>
+
+        <EditText
+            android:id="@+id/edittext_mensagem"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@id/edittext_email"
+            android:hint="Escreva o que gostaria de nos dizer"
+            android:inputType="text|textMultiLine"/>
+
+        <Button
+            android:id="@+id/button_enviar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/ripple_button_default"
+            android:textColor="@color/white"
+            android:text="Enviar"
+            android:onClick="enviarFaleConosco"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
