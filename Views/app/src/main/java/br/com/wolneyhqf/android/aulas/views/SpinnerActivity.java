@@ -9,7 +9,14 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-
+// Erlandson
+// Ricardo
+// Odillon
+//Danilo
+// Diego
+// Rildo
+// Nayanne
+// André
 public class SpinnerActivity extends AppCompatActivity {
 
     private String[] paises = new String[]{"Argentina", "Brasil", "Estados Unidos", "Holanda"};
@@ -22,7 +29,6 @@ public class SpinnerActivity extends AppCompatActivity {
 
         final Spinner spinnerPaises = (Spinner) findViewById(R.id.spinner_paises);
         ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, paises);
-        adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerPaises.setAdapter(adaptador);
 
         Button botaoPais = (Button) findViewById(R.id.botao_pais);

@@ -28,7 +28,7 @@ public class DialogActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                ProgressDialog dialog = new ProgressDialog(DialogActivity.this);
+                ProgressDialog dialog = new ProgressDialog(getBaseContext());
 
                 dialog.setTitle("Exemplo ProgressDialog");
                 dialog.setMessage("Aguarde um momento...");
