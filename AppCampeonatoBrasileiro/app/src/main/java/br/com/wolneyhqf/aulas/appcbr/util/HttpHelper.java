@@ -33,6 +33,18 @@ public class HttpHelper {
         return (networkInfo != null && networkInfo.isConnected());
     }
 
+    public static boolean isWiFi(Context context){
+        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+        return (networkInfo != null && networkInfo.getType() == ConnectivityManager.TYPE_WIFI);
+    }
+
+    public static boolean isMobileData(Context context){
+        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+        return (networkInfo != null && networkInfo.getType() == ConnectivityManager.TYPE_MOBILE);
+    }
+
     public String doGET(String path){
         return doGET(path, null);
     }
@@ -122,6 +134,69 @@ public class HttpHelper {
     public String getFullURL(String path){
         return urlBase + "/" + path;
     }
+
+    public void teste(){
+        String response = null;
+        try {
+            URL url = new URL("http://127.0.0.1/appcbr/clubes"); // Endereço do web service
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection(); // Obtém instância de HttpURLConnection
+            connection.setConnectTimeout(15000); // Tempo limite para tentar se conectar ao web service
+            connection.setReadTimeout(10000); // Tempo limite para ler os dados do web services
+            connection.setRequestMethod("GET"); // Método HTTP utilizado na requisição
+            connection.setDoInput(true); // Se lerá dados da requisição
+            connection.setDoOutput(false); // Se escreverá dados na requisição
+            connection.addRequestProperty("Content-Type", "application/json"); // Cabeçalhos da requisição
+            OutputStream os = connection.getOutputStream(); // Obtém um OutputStream para escrever dados no corpo da requisição
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(os, "UTF-8")); // Obtém BufferedWriter
+            bw.write("Dados da requisição"); // Escreve os dados no corpo da requisição em formato de String (BufferedWriter)
+            bw.flush(); // Para o BufferedWriter escrever os dados
+            bw.close();  // Fecha o BufferedWriter
+            os.close(); // Fecha o OutputStream
+            connection.connect(); // Estabelecer conexão
+            // Verifica se conexão foi realizada com sucesso
+            if(connection.getResponseCode() >= HttpURLConnection.HTTP_BAD_REQUEST){
+                // ocorreu algum erro na conexão ao web service
+            }else{
+                // Se conexão deu certo, obtém o InputStream para ler os dados da requisição
+                InputStream in = connection.getInputStream();
+            }
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (ProtocolException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void teste2(){
+        String response = null;
+        try {
+            URL url = new URL("http://127.0.0.1/appcbr/clubes"); // Endereço do web service
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection(); // Obtém instância de HttpURLConnection
+            connection.setConnectTimeout(15000); // Tempo limite para tentar se conectar ao web service
+            connection.setReadTimeout(10000); // Tempo limite para ler os dados do web services
+            connection.setRequestMethod("GET"); // Método HTTP utilizado na requisição
+            connection.setDoInput(true); // Se lerá dados da requisição
+            connection.setDoOutput(false); // Se escreverá dados na requisição
+            connection.addRequestProperty("Content-Type", "application/json"); // Cabeçalhos da requisição
+            connection.connect(); // Estabelecer conexão
+            // Verifica se conexão foi realizada com sucesso
+            if(connection.getResponseCode() >= HttpURLConnection.HTTP_BAD_REQUEST){
+                // ocorreu algum erro na conexão ao web service
+            }else{
+                // Se conexão deu certo, obtém o InputStream para ler os dados da requisição
+                InputStream in = connection.getInputStream();
+            }
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (ProtocolException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 
 }

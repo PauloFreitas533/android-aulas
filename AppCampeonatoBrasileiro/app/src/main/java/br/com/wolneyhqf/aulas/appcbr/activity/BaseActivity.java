@@ -20,6 +20,7 @@ import br.com.wolneyhqf.aulas.appcbr.R;
 public abstract class BaseActivity extends AppCompatActivity {
 
     protected DrawerLayout drawerLayout;
+    protected final String TAG = "appcbr";
 
     protected void setupToolbar(){
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

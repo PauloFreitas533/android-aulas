@@ -32,6 +32,7 @@ public class DownloadImagemActivity extends AppCompatActivity {
         handler = new Handler();
 
         Button buttonDownload = (Button) findViewById(R.id.button_download_imagem);
+
         buttonDownload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,8 +55,22 @@ public class DownloadImagemActivity extends AppCompatActivity {
             public void run(){
 
                 try {
-                    Bitmap bitmap = downloadBitmap(urlImg);
-                    atualizaImagem(bitmap);
+                    final Bitmap bitmap = downloadBitmap(urlImg);
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            progressDialog.dismiss();
+                            imageViewDownload.setImageBitmap(bitmap);
+                        }
+                    });
+
+//                    runOnUiThread(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            progressDialog.dismiss();
+//                            imageViewDownload.setImageBitmap(bitmap);
+//                        }
+//                    });
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -66,16 +81,6 @@ public class DownloadImagemActivity extends AppCompatActivity {
         }.start();
 
 
-    }
-
-    public void atualizaImagem(final Bitmap bitmap){
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                progressDialog.dismiss();
-                imageViewDownload.setImageBitmap(bitmap);
-            }
-        });
     }
 
     public Bitmap downloadBitmap(String url) throws IOException{

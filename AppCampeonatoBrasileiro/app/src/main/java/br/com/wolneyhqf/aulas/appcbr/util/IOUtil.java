@@ -83,7 +83,8 @@ public class IOUtil {
         while((bytes = inputStream.read(buffer)) != -1){
             byteArrayOutputStream.write(buffer, 0, bytes);
         }
-        return new String(byteArrayOutputStream.toByteArray(), "UTF-8");
+        String jsonObject = new String(byteArrayOutputStream.toByteArray(), "UTF-8");
+        return jsonObject;
     }
 
 }

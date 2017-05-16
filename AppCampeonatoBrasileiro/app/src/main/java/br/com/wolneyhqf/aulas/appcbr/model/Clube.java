@@ -20,11 +20,25 @@ public class Clube implements Parcelable {
     private String estado;
     private String cidade;
     private String urlEscudo;
+    private double latitude;
+    private double longitude;
 
     public Clube(){}
 
     private Clube(Parcel p){
+        id = p.readLong();
         nome = p.readString();
+        nomeAbreviado = p.readString();
+        mascote = p.readString();
+        fundacao = p.readString();
+        estadio = p.readString();
+        capacidadeEstadio = p.readInt();
+        cidade = p.readString();
+        estado = p.readString();
+        pais = p.readString();
+        urlEscudo = p.readString();
+        latitude = p.readDouble();
+        longitude = p.readDouble();
     }
 
     public static final Parcelable.Creator<Clube> CREATOR = new Parcelable.Creator<Clube>() {
@@ -37,6 +51,27 @@ public class Clube implements Parcelable {
         }
     };
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeLong(id);
+        parcel.writeString(nome);
+        parcel.writeString(nomeAbreviado);
+        parcel.writeString(mascote);
+        parcel.writeString(fundacao);
+        parcel.writeString(estadio);
+        parcel.writeInt(capacidadeEstadio);
+        parcel.writeString(cidade);
+        parcel.writeString(estado);
+        parcel.writeString(pais);
+        parcel.writeString(urlEscudo);
+        parcel.writeDouble(latitude);
+        parcel.writeDouble(longitude);
+    }
 
     public String getNome() {
         return nome;
@@ -126,14 +161,19 @@ public class Clube implements Parcelable {
         this.urlEscudo = urlEscudo;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
+    public double getLatitude() {
+        return latitude;
     }
 
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(nome);
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
     }
 
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
 }

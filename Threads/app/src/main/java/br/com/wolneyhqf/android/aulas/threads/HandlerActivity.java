@@ -23,10 +23,18 @@ public class HandlerActivity extends AppCompatActivity {
         buttonDispararMensagem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Handler handler = new MensagemHandler(HandlerActivity.this);
+
+                MensagemHandler handler = new MensagemHandler(HandlerActivity.this);
                 Message msg = new Message();
-                msg.what = MensagemHandler.MSG_01;
+
+                Bundle bundle = new Bundle();
+                bundle.putString("minha_mensagem", "Olá todos!");
+                msg.setData(bundle);
+
+                msg.what = 9854;
+
                 handler.sendMessageDelayed(msg, 3000);
+                //handler.sendMessage(msg);
 
             }
         });

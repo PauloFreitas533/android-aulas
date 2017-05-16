@@ -20,6 +20,7 @@ import br.com.wolneyhqf.aulas.appcbr.activity.FaleConoscoActivity;
 import br.com.wolneyhqf.aulas.appcbr.activity.LogActivity;
 import br.com.wolneyhqf.aulas.appcbr.activity.PreferencesActivity;
 import br.com.wolneyhqf.aulas.appcbr.activity.ProfileActivity;
+import br.com.wolneyhqf.aulas.appcbr.util.HttpHelper;
 import br.com.wolneyhqf.aulas.appcbr.util.PermissionUtil;
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -30,7 +31,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class ConfigFragment extends Fragment implements ListView.OnItemClickListener {
 
     private CircleImageView circleImageViewProfile;
-    private String[] opcoes = new String[]{"Preferências", "Permissões do Aplicativo", "Logs do Aplicativo", "Fale Conosco", "Sair"};
+    private String[] opcoes = new String[]{"Preferências", "Permissões do Aplicativo", "Logs do Aplicativo", "Fale Conosco", "Verificar Conexão", "Sair"};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState) {
@@ -69,7 +70,10 @@ public class ConfigFragment extends Fragment implements ListView.OnItemClickList
                 break;
             case 1:
                 String[] permissions = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                        Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CAMERA};
+                        Manifest.permission.READ_EXTERNAL_STORAGE,
+                        Manifest.permission.CAMERA,
+                        Manifest.permission.ACCESS_COARSE_LOCATION,
+                        Manifest.permission.ACCESS_FINE_LOCATION};
                 boolean ok = PermissionUtil.validate(getActivity(), 0, permissions);
                 if(ok){
                     Toast.makeText(getContext(), "Todas as permissões foram concedidas", Toast.LENGTH_SHORT).show();
@@ -84,6 +88,17 @@ public class ConfigFragment extends Fragment implements ListView.OnItemClickList
                 startActivity(intent);
                 break;
             case 4:
+                if(HttpHelper.hasConnection(getContext())){
+                    if(HttpHelper.isWiFi(getContext())){
+                        Toast.makeText(getContext(), "Conectado a rede Wi-Fi", Toast.LENGTH_SHORT).show();
+                    }else if(HttpHelper.isMobileData(getContext())){
+                        Toast.makeText(getContext(), "Conectado a rede de dados", Toast.LENGTH_SHORT).show();
+                    }
+                }else{
+                    Toast.makeText(getContext(), "Sem conexão", Toast.LENGTH_SHORT).show();
+                }
+                break;
+            case 5:
                 getActivity().finish();
                 break;
         }

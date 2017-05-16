@@ -1,25 +1,31 @@
 package br.com.wolneyhqf.aulas.appcbr.fragment;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+
+import com.google.gson.Gson;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import br.com.wolneyhqf.aulas.appcbr.R;
+import br.com.wolneyhqf.aulas.appcbr.activity.ClubeActivity;
 import br.com.wolneyhqf.aulas.appcbr.adapter.ClubesAdapter;
 import br.com.wolneyhqf.aulas.appcbr.model.Clube;
 import br.com.wolneyhqf.aulas.appcbr.util.HttpHelper;
@@ -71,21 +77,35 @@ public class ClubesFragment extends Fragment {
     }
 
     public void carregarClubes(){
+        HttpHelper httpHelper = new HttpHelper(BASE_URL);
+        String response = httpHelper.doGET("clubes");
+        if(response != null){
+            gsonJsonToList(response);
+        }
+    }
+
+    // Parser Json To Object utilizando com.google.gson.Gson
+    private void gsonJsonToList(String json){
+        Gson gson = new Gson();
+        Clube[] clubesArray = gson.fromJson(json, Clube[].class);
+        for(Clube clube : clubesArray){
+            clubes.add(clube);
+        }
+    }
+
+    // Parser Json To Object utilizando org.json.JSONObject
+    private void jsonJsonToList(String json){
         try {
-            HttpHelper httpHelper = new HttpHelper(BASE_URL);
-            String response = httpHelper.doGET("clubes");
-            if(response != null){
-                JSONArray jsonArray = new JSONArray(response);
-                for (int i = 0; i < jsonArray.length(); i++) {
-                    JSONObject jsonObject = jsonArray.getJSONObject(i);
-                    Clube clube = new Clube();
-                    clube.setNome(jsonObject.getString("nome"));
-                    clube.setEstado(jsonObject.getString("estado"));
-                    clube.setEstadio(jsonObject.getString("estadio"));
-                    clube.setCidade(jsonObject.getString("cidade"));
-                    clube.setUrlEscudo(jsonObject.getString("urlEscudo"));
-                    clubes.add(clube);
-                }
+            JSONArray jsonArray = new JSONArray(json);
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                Clube clube = new Clube();
+                clube.setNome(jsonObject.getString("nome"));
+                clube.setEstado(jsonObject.getString("estado"));
+                clube.setEstadio(jsonObject.getString("estadio"));
+                clube.setCidade(jsonObject.getString("cidade"));
+                clube.setUrlEscudo(jsonObject.getString("urlEscudo"));
+                clubes.add(clube);
             }
         } catch (JSONException e) {
             e.printStackTrace();
@@ -96,7 +116,10 @@ public class ClubesFragment extends Fragment {
         return new ClubesAdapter.ClubeOnClickListener() {
             @Override
             public void onClickClube(View view, int index) {
-                Toast.makeText(getContext(), String.valueOf(index), Toast.LENGTH_SHORT).show();
+                Clube clube = clubes.get(index);
+                Intent intent = new Intent(getContext(), ClubeActivity.class);
+                intent.putExtra("clube", clube);
+                startActivity(intent);
             }
         };
     }

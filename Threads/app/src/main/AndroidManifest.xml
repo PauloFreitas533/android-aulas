@@ -21,7 +21,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".AsyncTaskActivity" />
-        <activity android:name=".ProvaActivity"></activity>
     </application>
 
 </manifest>
