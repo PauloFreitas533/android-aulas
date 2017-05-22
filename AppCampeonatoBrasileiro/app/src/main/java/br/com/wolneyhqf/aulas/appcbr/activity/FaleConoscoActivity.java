@@ -20,13 +20,13 @@ import br.com.wolneyhqf.aulas.appcbr.util.LogUtil;
 
 public class FaleConoscoActivity extends BaseActivity {
 
-    private final String TAG = "appcampeonatobrasileiro";
+    private final String TAG = "appcbr";
 
     private EditText editTextNome;
     private EditText editTextEmail;
     private EditText editTextMensagem;
     private ProgressDialog progressDialog;
-    private HttpHelper httpHelper = new HttpHelper("http://172.16.0.92:8080/AppCampeonatoBrasileiro/api/v1");
+    private HttpHelper httpHelper = new HttpHelper("http://104.131.32.72/appcbr");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,7 +96,7 @@ public class FaleConoscoActivity extends BaseActivity {
             String body = gson.toJson(faleConosco);
             Map<String, String> headers = new HashMap<String, String>();
             headers.put("Content-Type", "application/json");
-            String response = httpHelper.doPOST("fale-conosco",  headers, body);
+            String response = httpHelper.doPOST("fale-conosco.php",  headers, body);
             LogUtil.writeLog(FaleConoscoActivity.this, "FaleConoscoActivity.enviarFaleConosco()");
             return response;
         }

@@ -38,8 +38,8 @@ import br.com.wolneyhqf.aulas.appcbr.util.LogUtil;
 public class ClubesFragment extends Fragment {
 
     public static final String TAG = "ClubesFragment";
-    public final String LOG_TAG = "appclubesfutebol";
-    public final String BASE_URL = "http://172.16.0.92:8080/AppCampeonatoBrasileiro/api/v1";
+    public final String LOG_TAG = "appcbr";
+    public final String BASE_URL = "http://104.131.32.72/appcbr";
 
     private RecyclerView recyclerView;
     private ClubesAdapter clubesAdapter;
@@ -78,7 +78,7 @@ public class ClubesFragment extends Fragment {
 
     public void carregarClubes(){
         HttpHelper httpHelper = new HttpHelper(BASE_URL);
-        String response = httpHelper.doGET("clubes");
+        String response = httpHelper.doGET("clubes.json");
         if(response != null){
             gsonJsonToList(response);
         }

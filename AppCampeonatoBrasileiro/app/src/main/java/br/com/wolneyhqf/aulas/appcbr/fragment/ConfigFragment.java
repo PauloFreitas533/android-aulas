@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,11 +14,13 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.squareup.picasso.Picasso;
 
 import br.com.wolneyhqf.aulas.appcbr.R;
 import br.com.wolneyhqf.aulas.appcbr.activity.FaleConoscoActivity;
 import br.com.wolneyhqf.aulas.appcbr.activity.LogActivity;
+import br.com.wolneyhqf.aulas.appcbr.activity.LoginActivity;
 import br.com.wolneyhqf.aulas.appcbr.activity.PreferencesActivity;
 import br.com.wolneyhqf.aulas.appcbr.activity.ProfileActivity;
 import br.com.wolneyhqf.aulas.appcbr.util.HttpHelper;
@@ -31,14 +34,14 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class ConfigFragment extends Fragment implements ListView.OnItemClickListener {
 
     private CircleImageView circleImageViewProfile;
-    private String[] opcoes = new String[]{"Preferências", "Permissões do Aplicativo", "Logs do Aplicativo", "Fale Conosco", "Verificar Conexão", "Sair"};
+    private String[] opcoes = new String[]{"Preferências", "Permissões do Aplicativo", "Logs do Aplicativo", "Fale Conosco", "Verificar Conexão", "Sair", "Token FCM", "Login"};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState) {
         View view = inflater.inflate(R.layout.fragment_config, container, false);
 
         circleImageViewProfile = (CircleImageView) view.findViewById(R.id.imageview_profile);
-        Picasso.with(getContext()).load("https://firebasestorage.googleapis.com/v0/b/app-campeonato-brasileiro.appspot.com/o/usuarios%2Fwolney%2Fprofile.jpg?alt=media&token=ab5deac3-fe05-406b-96e5-39d7e2bf12cc")
+        Picasso.with(getContext()).load("https://firebasestorage.googleapis.com/v0/b/app-cbr-164616.appspot.com/o/usuarios%2Fprofile.jpg?alt=media&token=2a11b7f6-1edd-4bda-b42f-3360216b1f27")
                 .placeholder(R.drawable.profile)
                 .error(R.drawable.profile)
                 .into(circleImageViewProfile);
@@ -100,6 +103,14 @@ public class ConfigFragment extends Fragment implements ListView.OnItemClickList
                 break;
             case 5:
                 getActivity().finish();
+                break;
+            case 6:
+                String tokenFcm = FirebaseInstanceId.getInstance().getToken();
+                Log.d("appcbr", tokenFcm);
+                break;
+            case 7:
+                Intent intentLogin = new Intent(getContext(), LoginActivity.class);
+                startActivity(intentLogin);
                 break;
         }
     }

@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "157590635908",
-    "firebase_url": "https://app-campeonato-brasileiro.firebaseio.com",
-    "project_id": "app-campeonato-brasileiro",
-    "storage_bucket": "app-campeonato-brasileiro.appspot.com"
+    "project_number": "443592892054",
+    "firebase_url": "https://app-cbr-164616.firebaseio.com",
+    "project_id": "app-cbr-164616",
+    "storage_bucket": "app-cbr-164616.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:157590635908:android:1346bebce76267f0",
+        "mobilesdk_app_id": "1:443592892054:android:1346bebce76267f0",
         "android_client_info": {
           "package_name": "br.com.wolneyhqf.aulas.appcbr"
         }
       },
       "oauth_client": [
         {
-          "client_id": "157590635908-ircpemlr8pbi5och52qnra7rkc6sofhc.apps.googleusercontent.com",
+          "client_id": "443592892054-ulb47benbi9pdhttjm09gdlnlvfgp1em.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "br.com.wolneyhqf.aulas.appcbr",
@@ -23,13 +23,13 @@
           }
         },
         {
-          "client_id": "157590635908-7kf8roejhgj15q6ql1snbq8s0t6gp5t1.apps.googleusercontent.com",
+          "client_id": "443592892054-kgmi5jac64r7dhgjh8ed2c77n2jlk05f.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAGwb0K3C_ZOu2Jd-y70gB8a1zJOMftXE0"
+          "current_key": "AIzaSyCAFW9ISWCcJlv-L1EqgeTiwspTBH8NWCQ"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "157590635908-7kf8roejhgj15q6ql1snbq8s0t6gp5t1.apps.googleusercontent.com",
+              "client_id": "443592892054-kgmi5jac64r7dhgjh8ed2c77n2jlk05f.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

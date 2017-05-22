@@ -48,7 +48,7 @@ public class ProfileActivity extends BaseActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         circleImageViewProfile = (CircleImageView) findViewById(R.id.imageview_profile);
-        Picasso.with(getBaseContext()).load("https://firebasestorage.googleapis.com/v0/b/app-campeonato-brasileiro.appspot.com/o/usuarios%2Fwolney%2Fprofile.jpg?alt=media&token=ab5deac3-fe05-406b-96e5-39d7e2bf12cc")
+        Picasso.with(getBaseContext()).load("https://firebasestorage.googleapis.com/v0/b/app-cbr-164616.appspot.com/o/usuarios%2Fprofile.jpg?alt=media&token=2a11b7f6-1edd-4bda-b42f-3360216b1f27")
                 .placeholder(R.drawable.profile)
                 .error(R.drawable.profile)
                 .into(circleImageViewProfile);
@@ -82,9 +82,9 @@ public class ProfileActivity extends BaseActivity {
     }
 
     public void uploadFirebaseStorage(){
-        StorageReference storageReference = storage.getReferenceFromUrl("gs://app-campeonato-brasileiro.appspot.com");
+        StorageReference storageReference = storage.getReferenceFromUrl("gs://app-cbr-164616.appspot.com");
 
-        StorageReference fileReference = storageReference.child("usuarios/wolney/profile.jpg");
+        StorageReference fileReference = storageReference.child("usuarios/profile.jpg");
 
         UploadTask uploadTask = fileReference.putFile(Uri.fromFile(photoFile));
 
