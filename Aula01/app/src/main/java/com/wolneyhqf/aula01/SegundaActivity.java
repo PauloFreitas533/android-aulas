@@ -3,6 +3,7 @@ package com.wolneyhqf.aula01;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.TextView;
 
 /**
  * Created by wolney on 19/08/17.
@@ -14,6 +15,14 @@ public class SegundaActivity extends AppCompatActivity {
     protected void onCreate(Bundle bundle){
         super.onCreate(bundle);
         setContentView(R.layout.activity_segunda);
+
+        TextView textViewNome = (TextView) findViewById(R.id.texto_nome);
+
+        Bundle bundleIntent = getIntent().getExtras();
+        String nome = bundleIntent.getString("nome_digitado");
+
+        textViewNome.setText(nome);
+
         Log.i("AppAula", "SegundaActivity.onCreate()");
     }
 

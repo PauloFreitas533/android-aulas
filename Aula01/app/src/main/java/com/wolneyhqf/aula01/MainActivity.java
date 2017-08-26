@@ -26,9 +26,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String nome = campoDeTextNome.getText().toString();
-                Toast.makeText(getBaseContext(), "Seu nome é: " + nome, Toast.LENGTH_LONG).show();
-
+                //Toast.makeText(getBaseContext(), "Seu nome é: " + nome, Toast.LENGTH_LONG).show();v
                 Intent intent = new Intent(getBaseContext(), SegundaActivity.class);
+                Bundle bundleIntent = new Bundle();
+                bundleIntent.putString("nome_digitado", nome);
+                intent.putExtras(bundleIntent);
                 startActivity(intent);
             }
         });
