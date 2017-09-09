@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Aula01</string>
     <string name="mome">Nome</string>
+
+    <string name="descricao">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae ex ac felis euismod viverra eu ut lacus. Curabitur viverra vehicula est, ac posuere neque cursus in. Nullam ac lorem est. Nulla volutpat nec ante non vehicula.
+    </string>
 </resources>
