@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
         campoDeTextNome = (EditText) findViewById(R.id.campo_de_texto_nome);
         botaoEnviar = (Button) findViewById(R.id.botao_enviar);
 
+        Intent intent = new Intent(Intent.ACTION_CALL);
+
         botaoEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
