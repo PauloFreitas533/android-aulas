@@ -1,5 +1,6 @@
 package br.com.wolneyhqf.aulas.persistencia.activity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -42,14 +43,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void salvarLivro(View view) {
-        LivroRepositorio livroRepositorio = new LivroRepositorio(this);
-        Livro livro = new Livro();
-        livro.setAutor("Nelson Glauber");
-        livro.setTitulo("Dominando o Android");
-        livro.setEditora("Novatec");
-        livro.setAno(2015);
-        livroRepositorio.salvar(livro);
-        Log.d("applivro", "Livro salvo!: " + livro.getId());
+        Intent intent = new Intent(getBaseContext(), CadastroLivroActivity.class);
+        startActivity(intent);
+//        LivroRepositorio livroRepositorio = new LivroRepositorio(this);
+//        Livro livro = new Livro();
+//        livro.setAutor("Nelson Glauber");
+//        livro.setTitulo("Dominando o Android");
+//        livro.setEditora("Novatec");
+//        livro.setAno(2015);
+//        livroRepositorio.salvar(livro);
+//        Log.d("applivro", "Livro salvo!: " + livro.getId());
     }
 
     public void listarLivros(View view) {
