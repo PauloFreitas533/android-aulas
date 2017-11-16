@@ -18,7 +18,7 @@
         
         <receiver android:name=".receiver.ReceiverEstatico">
             <intent-filter>
-                <action android:name="RECEIVER_ESTATICO" />
+                <action android:name="MEU_RECEIVER" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>

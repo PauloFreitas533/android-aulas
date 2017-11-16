@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         buttonReceiverEstatico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent("RECEIVER_ESTATICO");
+                Intent intent = new Intent("MEU_RECEIVER");
                 intent.putExtra("msg", "Hello Receiver Estático!");
                 sendBroadcast(intent);
             }
