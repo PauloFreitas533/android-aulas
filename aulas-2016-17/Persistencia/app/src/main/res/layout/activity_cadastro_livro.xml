@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="br.com.wolneyhqf.aulas.persistencia.activity.CadastroLivroActivity">
+
+    <EditText
+        android:id="@+id/edittext_titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Titulo do Livro"/>
+
+    <EditText
+        android:id="@+id/edittext_autor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Autor do Livro"/>
+
+    <EditText
+        android:id="@+id/edittext_editora"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Editora do Livro"/>
+
+    <EditText
+        android:id="@+id/edittext_ano"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Ano do Livro"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Salvar"
+        android:onClick="salvarLivro"/>
+
+</LinearLayout>
