@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">Views</string>
-
-    <string name="hello_world">Olá Mundo!</string>
-    <string name="texto_branco_fundo_azul">Texto Branco com Fundo Azul</string>
-    <string name="style_sample">Estilo Exemplo</string>
-</resources>

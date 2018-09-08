@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">PDMII_Aula04</string>
-    <string name="action_settings">Configurações</string>
-    <string name="action_search">Pesquisar</string>
-    <string name="action_refresh">Atualizar</string>
-    <string name="action_share">Compartilhar</string>
-</resources>

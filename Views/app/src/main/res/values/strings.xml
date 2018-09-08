@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">Views</string>
-
-    <string name="hello_world">Hello World!</string>
-    <string name="texto_branco_fundo_azul">White Text Background Blue</string>
-    <string name="style_sample">Style Sample</string>
-</resources>
